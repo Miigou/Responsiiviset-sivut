@@ -265,3 +265,154 @@ footer {
     background-color: #888888;
     color: white;
 }
+
+/* ===== RESPONSIIVISET TYYLIT (MOBILE FIRST) ===== */
+
+/* Tablet ja pienempi (max 768px) */
+@media (max-width: 768px) {
+    
+    /* Header mobiilissa */
+    header {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+    
+    /* Body padding mobiilissa (header korkeampi) */
+    body {
+        padding-top: 90px;
+    }
+    
+    /* Main sisältö */
+    main {
+        font-size: 1.2em;
+    }
+    
+    /* Sektiot leveämmiksi mobiilissa */
+    section {
+        width: 95%;
+        margin: 15px auto;
+    }
+    
+    /* Showcase mobiilissa */
+    .showcase {
+        height: 250px;
+        font-size: 1.3em;
+        padding: 20px 0;
+    }
+    
+    .showcase > div {
+        max-width: 90%;
+        margin: 20px auto 0 auto;
+    }
+    
+    .showcase h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .showcase p {
+        font-size: 0.9em;
+    }
+    
+    /* Accordion mobiilissa */
+    summary {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+    
+    details p {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+    
+    /* Taulukko mobiilissa */
+    table {
+        font-size: 0.85em;
+    }
+    
+    table th, table td {
+        padding: 8px;
+    }
+    
+    table td[rowspan] {
+        width: 120px;
+        font-size: 0.85em;
+    }
+    
+    /* Footer mobiilissa */
+    footer {
+        padding: 20px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Puhelin (max 480px) */
+@media (max-width: 480px) {
+    
+    /* Header vielä kompaktimpi */
+    header {
+        padding: 8px 10px;
+    }
+    
+    nav a {
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+    
+    /* Body padding puhelimessa */
+    body {
+        padding-top: 100px;
+    }
+    
+    /* Main sisältö puhelimessa */
+    main {
+        font-size: 1em;
+    }
+    
+    /* Showcase puhelimessa */
+    .showcase {
+        height: 200px;
+        font-size: 1.1em;
+    }
+    
+    .showcase h1 {
+        font-size: 1.3em;
+    }
+    
+    .showcase p {
+        font-size: 0.8em;
+    }
+    
+    /* Accordion puhelimessa */
+    summary {
+        font-size: 0.9em;
+        padding: 10px 12px;
+    }
+    
+    /* Taulukko puhelimessa */
+    table {
+        font-size: 0.75em;
+    }
+    
+    table th, table td {
+        padding: 6px;
+    }
+    
+    table td[rowspan] {
+        width: 100px;
+        font-size: 0.8em;
+    }
+}
