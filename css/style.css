@@ -1,0 +1,267 @@
+/* Google Fonts import - Lato fontti */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* CSS-muuttujat väreille */
+:root {
+    --teksti: #333333;
+    --tausta: #eeeeee;
+    --teksti-vaalea: #dddddd;
+}
+
+/* Globaali box-sizing asetus */
+* {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--tausta);
+    color: var(--teksti);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #888888;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Header-logo */
+header .logo span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Navigaatio flexbox-asettelu */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navigaation linkit */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Navigaation linkit hover-tila */
+nav a:hover {
+    background-color: #28a745;
+}
+
+/* Main */
+main {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    flex-grow: 1;
+}
+
+/* Sisältösektiot */
+section {
+    max-width: 900px;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.showcase {
+    font-size: 1.7em;
+    padding-top: 50px;
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 0;
+    line-height: 1.7em;
+    height: 400px;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.pexels.com/photos/29445974/pexels-photo-29445974.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Showcase */
+.showcase > div {
+    color: var(--teksti-vaalea);
+    max-width: 50%;
+    text-align: center;
+    margin: 40px auto 0 auto;
+    
+}
+
+
+/* Details/Summary (Accordion) styles */
+details {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Klikkattava otsikko-alue */
+summary {
+    background-color: #888888;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    list-style: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Piilottaa selaimen oletuskolmion (▶) */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Lisää oma + ja - merkki otsikoiden eteen */
+summary::before {
+    content: "+";
+    font-size: 1.2em;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Kun accordion on auki, vaihda + merkki - merkiksi */
+details[open] summary::before {
+    content: "-";
+}
+
+/* Kun hiiri on otsikon päällä */
+summary:hover {
+    background-color: #28a745;
+}
+
+/* Kun accordion on auki, tee otsikko vihreäksi */
+details[open] summary {
+    background-color: #28a745;
+}
+
+/* Sisältöteksti joka näkyy kun accordion avataan */
+details p {
+    padding: 15px 20px;
+    margin: 0;
+    background-color: white;
+}
+
+/* Taulukko-tyylit */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 2px solid #333;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+/* Arvosana-sarake */
+table td[rowspan] {
+    width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+}
+
+/* Arvosanakohtaiset värit */
+table tr:nth-child(1) td[rowspan] {
+    background-color: #dc3545; /* Tyydyttävä 1 - punainen */
+}
+
+table tr:nth-child(6) td[rowspan] {
+    background-color: #fd7e14; /* Tyydyttävä 2 - oranssi */
+}
+
+table tr:nth-child(11) td[rowspan] {
+    background-color: #ffc107; /* Hyvä 3 - keltainen */
+    color: #333; /* Tumma teksti keltaisella taustalla */
+}
+
+table tr:nth-child(16) td[rowspan] {
+    background-color: #90ee90; /* Hyvä 4 - vaaleanvihreä */
+}
+
+table tr:nth-child(21) td[rowspan] {
+    background-color: #228b22; /* Kiitettävä 5 - tummanvihreä */
+}
+
+/* Himmeämmät värit teksti-soluille */
+table tr:nth-child(1) td:not([rowspan]),
+table tr:nth-child(2) td,
+table tr:nth-child(3) td,
+table tr:nth-child(4) td,
+table tr:nth-child(5) td {
+    background-color: rgba(220, 53, 69, 0.1); /* Tyydyttävä 1 - himmeä punainen */
+}
+
+table tr:nth-child(6) td:not([rowspan]),
+table tr:nth-child(7) td,
+table tr:nth-child(8) td,
+table tr:nth-child(9) td,
+table tr:nth-child(10) td {
+    background-color: rgba(253, 126, 20, 0.1); /* Tyydyttävä 2 - himmeä oranssi */
+}
+
+table tr:nth-child(11) td:not([rowspan]),
+table tr:nth-child(12) td,
+table tr:nth-child(13) td,
+table tr:nth-child(14) td,
+table tr:nth-child(15) td {
+    background-color: rgba(255, 193, 7, 0.15); /* Hyvä 3 - himmeä keltainen */
+}
+
+table tr:nth-child(16) td:not([rowspan]),
+table tr:nth-child(17) td,
+table tr:nth-child(18) td,
+table tr:nth-child(19) td,
+table tr:nth-child(20) td {
+    background-color: rgba(34, 139, 34, 0.15); /* Hyvä 4 - himmeä tummanvihreä */
+}
+
+table tr:nth-child(21) td:not([rowspan]),
+table tr:nth-child(22) td,
+table tr:nth-child(23) td,
+table tr:nth-child(24) td,
+table tr:nth-child(25) td,
+table tr:nth-child(26) td {
+    background-color: rgba(144, 238, 144, 0.3); /* Kiitettävä 5 - himmeä vaaleanvihreä */
+}
+
+/* Footer-alue */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #888888;
+    color: white;
+}
