@@ -13,6 +13,12 @@
     box-sizing: border-box;
 }
 
+/* Estä vaakascrollaus */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 /* Body */
 body {
     margin: 0;
@@ -77,8 +83,9 @@ main {
 /* Sisältösektiot */
 section {
     max-width: 900px;
-    width: 70%;
+    width: 90%;
     margin: 20px auto;
+    padding: 0 20px;
 }
 
 .showcase {
@@ -103,10 +110,10 @@ section {
 /* Showcase */
 .showcase > div {
     color: var(--teksti-vaalea);
-    max-width: 50%;
+    max-width: 80%;
     text-align: center;
     margin: 40px auto 0 auto;
-    
+    padding: 0 20px;
 }
 
 
@@ -380,20 +387,38 @@ footer {
     /* Main sisältö puhelimessa */
     main {
         font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    /* Sektiot täysi leveys puhelimessa */
+    section {
+        width: 100%;
+        margin: 10px auto;
+        padding: 0 10px;
+        max-width: none;
     }
     
     /* Showcase puhelimessa */
     .showcase {
         height: 200px;
         font-size: 1.1em;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .showcase > div {
+        max-width: 95%;
+        padding: 0 10px;
     }
     
     .showcase h1 {
         font-size: 1.3em;
+        margin: 10px 0;
     }
     
     .showcase p {
-        font-size: 0.8em;
+        font-size: 0.9em;
+        margin: 10px 0;
     }
     
     /* Accordion puhelimessa */
